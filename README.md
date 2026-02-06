@@ -1,96 +1,60 @@
 # Pipeline Machine Learning – Prédiction météorologique à court terme
 
 ## Présentation du projet
-Ce projet présente la conception et l’implémentation d’un pipeline de Machine Learning complet en Python, appliqué à la prédiction de la température à court terme à partir de données météorologiques horaires.
-
-L’objectif est de démontrer une approche structurée et reproductible, depuis l’ingestion des données jusqu’à leur préparation pour l’apprentissage automatique, dans une logique proche d’un environnement professionnel.
+Ce projet consiste en la conception et l’implémentation d’un pipeline de Machine Learning complet en Python, appliqué à la prédiction de la température à court terme à partir de données météorologiques horaires. Il met l’accent sur la structuration du pipeline, la reproductibilité et les bonnes pratiques en Data Science.
 
 ---
 
-## Objectifs du projet
-- Mettre en place un pipeline de données clair et reproductible
-- Transformer une série temporelle en problème de régression supervisée
-- Réaliser une analyse exploratoire approfondie
-- Préparer des données exploitables pour le Machine Learning
+## Objectifs
+- Construire un pipeline de données clair et reproductible
+- Transformer une série temporelle en un problème de régression supervisée
+- Réaliser une analyse exploratoire pour comprendre les relations entre variables
+- Préparer des jeux de données exploitables pour l’apprentissage automatique
 
 ---
 
 ## Données
-Les données utilisées sont des données météorologiques horaires (température, pression, date et heure).
-
-Pour des raisons de bonnes pratiques et de volume, les données brutes ne sont pas versionnées directement dans le dépôt. Le pipeline permet toutefois de charger et traiter les données localement.
+Les données utilisées sont des données météorologiques horaires (température, pression, date/heure).  
+Les fichiers de données ne sont pas versionnés directement dans le dépôt afin de respecter les bonnes pratiques liées au volume et à la gestion des données.
 
 ---
 
 ## Méthodologie
+Le pipeline est structuré selon les étapes suivantes :
 
-1. Ingestion et nettoyage des données
-2. Feature engineering (création de variables retardées)
-3. Analyse exploratoire des données (EDA)
-4. Construction des jeux de données X et y
-5. Archivage et traçabilité des données
+1. Ingestion et nettoyage des données  
+2. Feature engineering avec création de variables temporelles retardées  
+3. Analyse exploratoire des données  
+4. Construction des jeux de données d’entrée (X) et de sortie (y)  
+5. Archivage et traçabilité des données  
 
 La variable cible correspond à la température à l’instant t+1.
 
 ---
 
-## Analyse exploratoire des données
-
-### Évolution temporelle de la température
-Cette visualisation met en évidence les variations et tendances de la température au cours du temps.
-
-![Évolution temporelle de la température](images/temperature_t1.png)
-
----
-
-### Distribution de la température cible
-La distribution de la température à t+1 montre une répartition continue, sans valeurs aberrantes majeures.
-
-![Distribution de la température](images/distribution_temp.png)
-
----
-
-### Relation température t-1 / température t+1
-Le graphique ci-dessous met en évidence une forte corrélation entre la température passée et la température future.
-
-![Relation température t-1 et t+1](images/scatter_temp.png)
-
----
-
-## Résultats et interprétation
-L’analyse exploratoire montre que la température à l’instant t-1 est fortement corrélée à la température à t+1, ce qui confirme la pertinence de l’approche basée sur des variables temporelles retardées.
-
-La pression atmosphérique apporte une information complémentaire mais moins déterminante.
+## Résultats
+L’analyse exploratoire met en évidence une forte corrélation entre la température passée et la température future, confirmant la pertinence de l’approche basée sur des variables temporelles. Ces résultats constituent une base solide pour l’intégration ultérieure de modèles de régression plus avancés.
 
 ---
 
 ## Technologies utilisées
-- Python
-- Pandas, NumPy
-- Matplotlib
-- Scikit-learn
-- SQLite
-- Jupyter Notebook
-- Git / GitHub
+- Python  
+- Pandas, NumPy  
+- Matplotlib  
+- Scikit-learn  
+- SQLite  
+- Jupyter Notebook  
+- Git / GitHub  
 
 ---
 
 ## Organisation du projet
-- Notebook principal pour le pipeline et l’analyse
-- Séparation claire entre données, features et code
-- Archivage des données pour assurer la reproductibilité
-- Versionnement avec Git
-
----
-
-## Perspectives d’amélioration
-- Intégration de modèles de régression avancés
-- Ajout de métriques d’évaluation quantitatives
-- Automatisation complète du pipeline
-- Extension à d’autres horizons de prédiction
+Le projet est organisé de manière à séparer clairement le code, les données et les étapes de traitement, dans une logique proche d’un environnement professionnel et collaborative.
 
 ---
 
 ## Auteur
-Nassim Gastlin  
-Master of Science – Data Management & Artificial Intelligence
+06/02/2026
+Nassim Gastli  
+Bilel Sahnoun
+Master of Science 2 – Data Management & Artificial Intelligence, ECE Paris, France
