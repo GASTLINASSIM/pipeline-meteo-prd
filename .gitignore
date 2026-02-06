@@ -20,18 +20,7 @@ env/
 *.pem
 
 # Data / outputs (souvent lourds)
-data/
-datasets/
-*.csv
-*.parquet
-*.db
-*.sqlite
-*.pkl
-*.joblib
-models/
-outputs/
-runs/
-mlruns/
+
 
 # OS
 .DS_Store
