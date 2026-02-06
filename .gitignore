@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# VSCode
+.vscode/
+
+# Secrets / env
+.env
+*.key
+*.pem
+
+# Data / outputs (souvent lourds)
+data/
+datasets/
+*.csv
+*.parquet
+*.db
+*.sqlite
+*.pkl
+*.joblib
+models/
+outputs/
+runs/
+mlruns/
+
+# OS
+.DS_Store
+Thumbs.db
