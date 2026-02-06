@@ -1,83 +1,96 @@
-# pipeline-meteo-prd
-Pipeline Machine Learning – Prédiction météorologique à court terme
-Description du projet
+# Pipeline Machine Learning – Prédiction météorologique à court terme
 
-Ce projet présente la conception et l’implémentation d’un pipeline de Machine Learning complet en Python, appliqué à la prédiction de la température à court terme à partir de données météorologiques horaires. L’objectif est de démontrer une approche structurée et reproductible, allant de l’ingestion des données à leur préparation pour l’apprentissage automatique.
+## Présentation du projet
+Ce projet présente la conception et l’implémentation d’un pipeline de Machine Learning complet en Python, appliqué à la prédiction de la température à court terme à partir de données météorologiques horaires.
 
-Le projet met l’accent sur la qualité du pipeline et la logique de traitement des données plutôt que sur l’optimisation d’un modèle spécifique. Il s’inscrit dans une démarche proche de celle rencontrée en environnement professionnel, notamment en data analysis et en machine learning appliqué.
+L’objectif est de démontrer une approche structurée et reproductible, depuis l’ingestion des données jusqu’à leur préparation pour l’apprentissage automatique, dans une logique proche d’un environnement professionnel.
 
-Objectifs
+---
 
-Mettre en place un pipeline de traitement de données structuré et reproductible
+## Objectifs du projet
+- Mettre en place un pipeline de données clair et reproductible
+- Transformer une série temporelle en problème de régression supervisée
+- Réaliser une analyse exploratoire approfondie
+- Préparer des données exploitables pour le Machine Learning
 
-Transformer une série temporelle en un problème de régression supervisée
+---
 
-Réaliser une analyse exploratoire afin de comprendre les relations entre variables
+## Données
+Les données utilisées sont des données météorologiques horaires (température, pression, date et heure).
 
-Préparer des jeux de données exploitables pour l’entraînement de modèles de Machine Learning
+Pour des raisons de bonnes pratiques et de volume, les données brutes ne sont pas versionnées directement dans le dépôt. Le pipeline permet toutefois de charger et traiter les données localement.
 
-Données
+---
 
-Les données utilisées sont des données météorologiques horaires (température, pression, date/heure).
-Pour des raisons de volume et de bonnes pratiques, les fichiers de données ne sont pas versionnés directement dans le dépôt. Le pipeline permet toutefois de charger et de traiter les données à partir de sources externes ou de fichiers fournis localement.
+## Méthodologie
 
-Méthodologie
+1. Ingestion et nettoyage des données
+2. Feature engineering (création de variables retardées)
+3. Analyse exploratoire des données (EDA)
+4. Construction des jeux de données X et y
+5. Archivage et traçabilité des données
 
-Le pipeline est organisé selon les étapes suivantes :
+La variable cible correspond à la température à l’instant t+1.
 
-Ingestion et nettoyage des données
+---
 
-Feature engineering avec création de variables retardées (lag features)
+## Analyse exploratoire des données
 
-Analyse exploratoire des données (EDA) à l’aide de visualisations
+### Évolution temporelle de la température
+Cette visualisation met en évidence les variations et tendances de la température au cours du temps.
 
-Construction des jeux de données d’entrée (X) et de sortie (y)
+![Évolution temporelle de la température](images/temperature_t1.png)
 
-Archivage et stockage intermédiaire pour assurer la traçabilité
+---
 
-La température à l’instant t+1 est utilisée comme variable cible, tandis que la température passée et d’autres variables météorologiques servent de variables explicatives.
+### Distribution de la température cible
+La distribution de la température à t+1 montre une répartition continue, sans valeurs aberrantes majeures.
 
-Résultats principaux
+![Distribution de la température](images/distribution_temp.png)
 
-L’analyse exploratoire met en évidence une forte corrélation entre la température à t-1 et la température à t+1, ce qui confirme la pertinence de l’approche basée sur des variables temporelles retardées. Les résultats obtenus constituent une base solide pour l’intégration ultérieure de modèles de régression et d’étapes d’évaluation plus avancées.
+---
 
-Technologies utilisées
+### Relation température t-1 / température t+1
+Le graphique ci-dessous met en évidence une forte corrélation entre la température passée et la température future.
 
-Python
+![Relation température t-1 et t+1](images/scatter_temp.png)
 
-Pandas, NumPy
+---
 
-Matplotlib / Seaborn
+## Résultats et interprétation
+L’analyse exploratoire montre que la température à l’instant t-1 est fortement corrélée à la température à t+1, ce qui confirme la pertinence de l’approche basée sur des variables temporelles retardées.
 
-Scikit-learn
+La pression atmosphérique apporte une information complémentaire mais moins déterminante.
 
-SQLite
+---
 
-Jupyter Notebook
+## Technologies utilisées
+- Python
+- Pandas, NumPy
+- Matplotlib
+- Scikit-learn
+- SQLite
+- Jupyter Notebook
+- Git / GitHub
 
-Git / GitHub
+---
 
-Organisation du projet
+## Organisation du projet
+- Notebook principal pour le pipeline et l’analyse
+- Séparation claire entre données, features et code
+- Archivage des données pour assurer la reproductibilité
+- Versionnement avec Git
 
-Notebook principal pour l’exploration et le pipeline
+---
 
-Séparation des données brutes, des données transformées et du code
+## Perspectives d’amélioration
+- Intégration de modèles de régression avancés
+- Ajout de métriques d’évaluation quantitatives
+- Automatisation complète du pipeline
+- Extension à d’autres horizons de prédiction
 
-Archivage des données pour assurer la reproductibilité
+---
 
-Utilisation de Git pour le versionnement et le travail collaboratif
-
-Perspectives d’amélioration
-
-Intégration de modèles de régression plus avancés
-
-Ajout de métriques d’évaluation quantitatives
-
-Automatisation complète du pipeline (scripts ou orchestration)
-
-Extension à d’autres variables météorologiques ou horizons de prédiction
-
-Auteur
-
-Projet réalisé par Nassim Gastlin
+## Auteur
+Nassim Gastlin  
 Master of Science – Data Management & Artificial Intelligence
