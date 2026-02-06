@@ -55,6 +55,4 @@ Le projet est organisé de manière à séparer clairement le code, les données
 
 ## Auteur
 06/02/2026
-Nassim Gastli  
-Bilel Sahnoun
-Master of Science 2 – Data Management & Artificial Intelligence, ECE Paris, France
+Nassim Gastli & Bilel Sahnoun - Master of Science 2 – Data Management & Artificial Intelligence, ECE Paris, France
